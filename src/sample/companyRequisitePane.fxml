@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane prefHeight="600.0" prefWidth="600.0" styleClass="stackPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CompanyRequisiteController">
+   <children>
+      <BorderPane fx:id="secondaryPane" prefHeight="600.0" prefWidth="600.0" styleClass="borderPane" stylesheets="@style.css">
+         <center>
+            <TableView fx:id="tableView" prefHeight="435.0" prefWidth="628.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Vardas, Pavardė">
+                   <cellValueFactory>
+                      <PropertyValueFactory property="name" />
+                   </cellValueFactory>
+                </TableColumn>
+                 <TableColumn prefWidth="75.0" text="Pozicija">
+                    <cellValueFactory>
+                       <PropertyValueFactory property="position" />
+                    </cellValueFactory>
+                 </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <HBox fx:id="borderPane" prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Circle fx:id="switchPaneCircle" fill="DODGERBLUE" radius="7.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle">
+                     <HBox.margin>
+                        <Insets left="570.0" top="10.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <VBox prefHeight="146.0" prefWidth="628.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="insert" mnemonicParsing="false" onAction="#insertEmployee" text="Įterpti">
+                           <HBox.margin>
+                              <Insets left="210.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="delete" layoutX="210.0" layoutY="15.0" mnemonicParsing="false" onAction="#deleteEmployee" text="Išimti">
+                           <HBox.margin>
+                              <Insets left="50.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="42.0" prefWidth="600.0">
+                     <children>
+                        <TextField fx:id="employeeName" promptText="Vardas, Pavardė">
+                           <HBox.margin>
+                              <Insets left="90.0" top="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="employeePosition" layoutX="110.0" layoutY="10.0" promptText="Pozicija">
+                           <HBox.margin>
+                              <Insets left="40.0" top="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+      <BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="borderPane" stylesheets="@style.css">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="37.0" prefWidth="600.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="211.0" text="Įmonės nustatymai">
+                           <HBox.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Circle fx:id="closeButton" fill="DODGERBLUE" onMouseClicked="#closePane" radius="7.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle">
+                           <HBox.margin>
+                              <Insets left="330.0" top="10.0" />
+                           </HBox.margin>
+                        </Circle>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="21.0" prefWidth="205.0" text="Pavadinimas">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label prefHeight="21.0" prefWidth="159.0" text="Įmonės kodas" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="PVM kodas" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Banko sąskaitos numeris" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Banko pavadinimas" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Banko kodas" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Pasirinkti darbuotoją" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <ChoiceBox fx:id="employees" prefHeight="31.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></ChoiceBox>
+                  <TextField fx:id="name" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="code" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="vatNumber" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="bankAccountNumber" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="bankName" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="bankCode" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <Label text="Adresas" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <TextField fx:id="address" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="26.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#updateCompany" text="Išsaugoti pakeitimus">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="220.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>

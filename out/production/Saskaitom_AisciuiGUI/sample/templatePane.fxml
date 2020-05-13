@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="borderPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TemplateController">
+   <top>
+      <VBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="128.0" text="Paruoštukai">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Circle fx:id="closeCircle" fill="DODGERBLUE" onMouseClicked="#closePane" radius="7.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle">
+                     <HBox.margin>
+                        <Insets left="430.0" top="10.0" />
+                     </HBox.margin>
+                  </Circle>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Prekės pavadinimas">
+             <cellValueFactory>
+                <PropertyValueFactory property="itemName" />
+             </cellValueFactory>
+          </TableColumn>
+           <TableColumn prefWidth="75.0" text="Matavimo vnt.">
+              <cellValueFactory>
+                 <PropertyValueFactory property="measuringUnit" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn prefWidth="75.0" text="Kaina vnt, EUR">
+              <cellValueFactory>
+                 <PropertyValueFactory property="price" />
+              </cellValueFactory>
+           </TableColumn>
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <bottom>
+      <VBox prefHeight="61.0" prefWidth="600.0" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="93.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#openAddPrepItemPane" text="Pridėti">
+                     <HBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deletePrepItem" text="Ištrinti">
+                     <HBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="modifyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openModifyPrepItemPane" text="Modifikuoti">
+                     <HBox.margin>
+                        <Insets left="100.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
